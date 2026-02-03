@@ -21,7 +21,7 @@ if (window.location.protocol === 'file:') {
 async function loadData() {
     console.log('Tentando carregar data.json...');
     try {
-        const response = await fetch('data.json');
+        const response = await fetch('processed_data.json');
         if (!response.ok) throw new Error(`Erro HTTP: ${response.status}`);
 
         allData = await response.json();
