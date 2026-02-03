@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador Inteligente - Incentivo</title>
+    <link rel="icon" type="image/png"
+        href="https://raw.githubusercontent.com/otaviogabrielbh-cloud/Incentivo/main/HMDCC.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <a href="index.html" class="back-link">
+                <i data-lucide="arrow-left"></i>
+                Menu Principal
+            </a>
+            <img src="https://raw.githubusercontent.com/otaviogabrielbh-cloud/Incentivo/main/HMDCC.png"
+                alt="Logotipo HMDCC" class="header-logo">
+            <div class="title-group">
+                <h1 class="title">Buscador Inteligente</h1>
+                <p class="subtitle">Tabela Incentivo - Consulta Rápida de Procedimentos</p>
+            </div>
+        </header>
+
+        <section class="search-section">
+            <div class="search-container">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Digite o código ou descrição do procedimento..."
+                    autocomplete="off">
+                <div id="resultCount" class="result-count">0 registros</div>
+            </div>
+
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="ses">SES</button>
+                <button class="filter-btn" data-filter="smsa">SMSA</button>
+                <button class="filter-btn" data-filter="sigtap">SIGTAP</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div id="resultsGrid" class="results-grid">
+                <!-- Resultados serão inseridos aqui via JS -->
+                <div class="loading-state">
+                    <p>Carregando dados da tabela...</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bar">
+            <div class="logo-segment">
+                <img src="https://raw.githubusercontent.com/otaviogabrielbh-cloud/Incentivo/main/HMDCC.png"
+                    alt="Hospital Metropolitano Dr. Célio de Castro" class="footer-logo">
+            </div>
+            <div class="bar-segment yellow"></div>
+            <div class="bar-segment purple"></div>
+            <div class="bar-segment dark-blue"></div>
+            <div class="bar-segment grey"></div>
+            <div class="bar-segment orange"></div>
+        </div>
+    </footer>
+
+    <!-- Modal de Detalhes -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content glass">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
